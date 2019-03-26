@@ -43,15 +43,15 @@ int main() {
 	int responseScore1, responseScore2, responseScore3, responseScore4, responseScore5, responseScore6, responseScore7, responseScore8, responseScore9;
 	float reactTime1, reactTime2, reactTime3, reactTime4, reactTime5, reactTime6, reactTime7, reactTime8, reactTime9;
 	string teamColor1, teamColor2, teamColor3, teamColor4, teamColor5, teamColor6, teamColor7, teamColor8, teamColor9;
-	string senario1, senario2;
+	string scenario1, scenario2;
 	int teamColor = 0;
 	int numberOfOfficers;
 
-	getline(officerData, senario1);
+	getline(officerData, scenario1);
 
 	
 
-	cout << senario1 << endl;
+	cout << scenario1 << endl;
 
 
 
@@ -71,9 +71,9 @@ int main() {
 	int responseScoreArray[] = { responseScore1, responseScore2, responseScore3, responseScore4, responseScore5, responseScore6, responseScore7, responseScore8, responseScore9 };
 	float reactTimeArray[] = { reactTime1, reactTime2, reactTime3, reactTime4, reactTime5, reactTime6, reactTime7, reactTime8, reactTime9};
 
-	getline(officerData, senario2);
-	if (senario2.empty())
-		getline(officerData, senario2);
+	getline(officerData, scenario2);
+	if (scenario2.empty())
+		getline(officerData, scenario2);
 
 	string officerName1_2, officerName2_2, officerName3_2, officerName4_2, officerName5_2, officerName6_2, officerName7_2, officerName8_2, officerName9_2;
 	int reactionScore1_2, reactionScore2_2, reactionScore3_2, reactionScore4_2, reactionScore5_2, reactionScore6_2, reactionScore7_2, reactionScore8_2, reactionScore9_2;
@@ -150,7 +150,7 @@ int main() {
 		x++;
 	}
 
-	cout << "       " << right << senario1 << "      " << setw(12) << senario2 << endl;
+	cout << "       " << right << scenario1 << "      " << setw(12) << scenario2 << endl;
 	cout << "Red    " << redReactTimeTotal / 3.00 << setw(15) << redReactTimeTotal_2 / 3.00 << endl;
 	cout << "Blue   " << blueReactTimeTotal / 3.00 << setw(15) << blueReactTimeTotal_2 / 3.00 << endl;
 	cout << "Yellow " << yellowReactTimeTotal / 3.00 << setw(15) << yellowReactTimeTotal_2 / 3.00 << endl;
