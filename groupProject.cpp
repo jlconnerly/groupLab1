@@ -226,8 +226,10 @@ int main() {
 	//Objective 5:
 	//Output the main results by outputting the winning team in each scenario as well as the most reactive, most responsive, and 
 	//fastest officers.The winning team is simply the response and reaction added together(without time being a factor) for each officer in the team :
+	cout << "Objective 5" << endl; 
 
-	x = 1;
+
+	x = 0;
 	int redReactionScoreTotal = 0;
 	int blueReactionScoreTotal = 0;
 	int yellowReactionScoreTotal = 0;
@@ -273,9 +275,43 @@ int main() {
 		x++;
 	}
 
-	int redTeamAverage = redReactionScoreTotal + redResponseScoreTotal / 9;
+	float redTeamAverage = (redReactionScoreTotal / 3) + (redResponseScoreTotal / 3) / 2; 
+	float blueTeamAverage = (blueReactionScoreTotal / 3) + (blueResponseScoreTotal / 3) / 2;
+	float yellowTeamAverage = (yellowReactionScoreTotal / 3) + (yellowResponseScoreTotal / 3) / 2;
+	
 
-	cout << "Test" << redTeamAverage << endl;
+	if (blueTeamAverage > redTeamAverage && blueTeamAverage > yellowTeamAverage)
+	cout << "blue Team     " << blueTeamAverage << endl;
+
+	if (redTeamAverage > blueTeamAverage && redTeamAverage > yellowTeamAverage)
+		cout << "Red Team     " << redTeamAverage << endl;
+
+	if (yellowTeamAverage > redTeamAverage && yellowTeamAverage > blueTeamAverage)
+		cout << "Yellow Team     " << yellowTeamAverage << endl;
+
+	if (blueTeamAverage > redTeamAverage && blueTeamAverage < yellowTeamAverage)
+		cout << "Blue Team     " << blueTeamAverage << endl;
+
+ 	if (redTeamAverage > blueTeamAverage && redTeamAverage < yellowTeamAverage)
+		cout << "Red Team     " << redTeamAverage << endl;
+
+	if (yellowTeamAverage > redTeamAverage && yellowTeamAverage < blueTeamAverage)
+		cout << "Yellow Team     " << yellowTeamAverage << endl;
+
+	if (blueTeamAverage < redTeamAverage && blueTeamAverage < yellowTeamAverage)
+		cout << "blue Team     " << blueTeamAverage << endl;
+
+	if (redTeamAverage < blueTeamAverage && redTeamAverage < yellowTeamAverage)
+		cout << "Red Team     " << redTeamAverage << endl;
+
+	if (yellowTeamAverage < redTeamAverage && yellowTeamAverage < blueTeamAverage)
+		cout << "Yellow Team     " << yellowTeamAverage << endl;
+
+	cout << "Top 3 Reaction Scores: " << endl;
+
+
+
+
 
 
 	//Bonus Objective 6:
