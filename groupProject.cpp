@@ -24,16 +24,18 @@ int main() {
 	cout << "Do you want to add your own scenario file for scenario 1?" << endl;
 	cout << "(Press 'Y' to add own files. press 'N' to use default files.)" << endl;
 	cin >> userFileChoice;
-	if (userFileChoice == 'Y' || userFileChoice == 'y') {
-		cout << "Enter in file name you want to reference for Scenario 1. example = scenario1.txt or database.txt" << endl;
-		cin >> fileName;
-	}
-	else if (userFileChoice == 'N' || userFileChoice == 'n') {
-		fileName = "dataBase.txt";
-	}
+
+		if (userFileChoice == 'Y' || userFileChoice == 'y') {
+			cout << "Enter in file name you want to reference for Scenario 1. example = scenario1.txt or database.txt" << endl;
+			cin >> fileName;
+		}
+		else if (userFileChoice == 'N' || userFileChoice == 'n') {
+			fileName = "database.txt";
+		}
+	
 
 	//cout << "Enter in file name you want to reference for Scenario 1. example = fileName.txt or database.txt" << endl;
-	cin >> fileName;
+	
 	ifstream officerData;
 	officerData.open(string(fileName));
 	
@@ -67,7 +69,7 @@ int main() {
 	int responseScoreArray[] = { responseScore1, responseScore2, responseScore3, responseScore4, responseScore5, responseScore6, responseScore7, responseScore8, responseScore9 };
 	float reactTimeArray[] = { reactTime1, reactTime2, reactTime3, reactTime4, reactTime5, reactTime6, reactTime7, reactTime8, reactTime9};
 
-	officerData.close();
+
 
 	string fileName2;
 	char userFileChoice2;
@@ -75,13 +77,15 @@ int main() {
 	cout << "Do you want to add your own scenario file for scenario2?" << endl;
 	cout << "(Press 'Y' to add own files. press 'N' to use default files.)" << endl;
 	cin >> userFileChoice2;
-	if (userFileChoice2 == 'Y' || userFileChoice2 == 'y') {
-		cout << "Enter in file name you want to reference for Scenario 2. example = scenario2.txt or database2.txt" << endl;
-		cin >> fileName2;
-	}
-	else if (userFileChoice2 == 'N' || userFileChoice2 == 'n') {
-		fileName2 = "dataBase2.txt";
-	}
+
+		if (userFileChoice2 == 'Y' || userFileChoice2 == 'y') {
+			cout << "Enter in file name you want to reference for Scenario 2. example = scenario2.txt or database.txt" << endl;
+			cin >> fileName2;
+		}
+		else if (userFileChoice2 == 'N' || userFileChoice2 == 'n') {
+			fileName2 = "database2.txt";
+		}
+
 
 	ifstream officerData_2;
 	officerData_2.open(string(fileName2));
@@ -90,6 +94,7 @@ int main() {
 	if (scenario2.empty())
 		getline(officerData_2, scenario2);
 
+	cout << "Test" << scenario2 << endl;
 	string officerName1_2, officerName2_2, officerName3_2, officerName4_2, officerName5_2, officerName6_2, officerName7_2, officerName8_2, officerName9_2;
 	int reactionScore1_2, reactionScore2_2, reactionScore3_2, reactionScore4_2, reactionScore5_2, reactionScore6_2, reactionScore7_2, reactionScore8_2, reactionScore9_2;
 	int responseScore1_2, responseScore2_2, responseScore3_2, responseScore4_2, responseScore5_2, responseScore6_2, responseScore7_2, responseScore8_2, responseScore9_2;
@@ -170,6 +175,7 @@ int main() {
 		"          " << DifReact8 << " " << DifResp8 << " " << DifTime8 << endl;
 	cout << officerName9 << "  " << reactionScore9 << " " << responseScore9 << " " << reactTime9 << "        " << reactionScore9_2 << " " << responseScore9_2 << " " << reactTime9_2 <<
 		"          " << DifReact9 << " " << DifResp9 << " " << DifTime9 << endl;
+	cout << endl;
 	//Objective 3:
 	//Speed test. We want to know what the overall team times were(average of the individual times for each team).
 	float redReactTimeTotal = 0.00;
@@ -210,7 +216,7 @@ int main() {
 	}
 
 	cout << "       " << right << scenario1 << "      " << setw(12) << scenario2 << endl;
-	cout << "Red    " << redReactTimeTotal / 3.00 << setw(15) << redReactTimeTotal_2 / 3.00 << endl;
+	cout << "Red    " << fixed << setprecision(2) << redReactTimeTotal / 3.00 << setw(15) << redReactTimeTotal_2 / 3.00 << endl;
 	cout << "Blue   " << blueReactTimeTotal / 3.00 << setw(15) << blueReactTimeTotal_2 / 3.00 << endl;
 	cout << "Yellow " << yellowReactTimeTotal / 3.00 << setw(15) << yellowReactTimeTotal_2 / 3.00 << endl;
 
@@ -218,27 +224,161 @@ int main() {
 	//Output the most valuable officer of each team.The most valuable officer is calculated by adding the reaction and response times up and subtracted 1 points for every 5 seconds of time they took.Output the MVP score with the name of the officer
 
 	//Objective 5:
-	//Output the main results by outputting the winning team in each scenario as well as the most reactive, most responsive, and fastest officers.The winning team is simply the response and reaction added together(without time being a factor) for each officer in the team :
+	//Output the main results by outputting the winning team in each scenario as well as the most reactive, most responsive, and 
+	//fastest officers.The winning team is simply the response and reaction added together(without time being a factor) for each officer in the team :
+
+	x = 1;
+	int redReactionScoreTotal = 0;
+	int blueReactionScoreTotal = 0;
+	int yellowReactionScoreTotal = 0;
+	int redReactionScoreTotal_2 = 0;
+	int blueReactionScoreTotal_2 = 0;
+	int yellowReactionScoreTotal_2 = 0;
+	int redResponseScoreTotal = 0;
+	int blueResponseScoreTotal = 0;
+	int yellowResponseScoreTotal = 0;
+	int redResponseScoreTotal_2 = 0;
+	int blueResponseScoreTotal_2 = 0;
+	int yellowResponseScoreTotal_2 = 0;
+
+	while (x != 9) {
+
+		if (teamColorArray[x] == "Red") {
+			redReactionScoreTotal += reactionScoreArray[x];
+			redResponseScoreTotal += responseScoreArray[x];
+
+		}
+		else if (teamColorArray[x] == "Blue") {
+			blueReactionScoreTotal += reactionScoreArray[x];
+			blueResponseScoreTotal += responseScoreArray[x];
+		}
+		else if (teamColorArray[x] == "Yellow") {
+			yellowReactionScoreTotal += reactionScoreArray[x];
+			yellowResponseScoreTotal += responseScoreArray[x];
+		}
+
+		if (teamColorArray_2[x] == "Red") {
+			redReactionScoreTotal_2 += reactionScoreArray_2[x];
+			redResponseScoreTotal_2 += responseScoreArray_2[x];
+		}
+		else if (teamColorArray_2[x] == "Blue") {
+			blueReactionScoreTotal_2 += reactionScoreArray_2[x];
+			blueResponseScoreTotal_2 += responseScoreArray_2[x];
+		}
+		else if (teamColorArray_2[x] == "Yellow") {
+			yellowReactionScoreTotal_2 += reactionScoreArray_2[x];
+			yellowResponseScoreTotal_2 += responseScoreArray_2[x];
+		}
+
+		x++;
+	}
+
+	int redTeamAverage = redReactionScoreTotal + redResponseScoreTotal / 9;
+
+	cout << "Test" << redTeamAverage << endl;
+
 
 	//Bonus Objective 6:
 	//Allow the input files to be specified by the user and changed from within the program.Additionally, adding a menu in the program to specify which output or function they want.
-
-		//Output Results According to Team
+		
+		//set inpt files    //reaction score, response score, reaction time
+		//Output results according to team
 		//Individual Performance Summery
 		//Output Speed Results
 		//Most Valuable Officer
 		//Overall Summery
 
-
-	
-	//char userChoice;
-	
 	cout << "____________________________________________________" << endl;
+	cout << endl;
+
+
+
+	//////////////////////////  -START-   Objective six outputting results by team   -START-   ///////////////////////////////////////////
+
+
+	cout << "              (Averages)" << setw(18) << scenario1 << setw(15) << scenario2 << endl;
+	cout << "   Red Team: Reaction Score" << setfill('.') << setw(11) << redReactionScoreTotal / 3 << setw(15) << redReactionScoreTotal_2 / 3 << endl;
+	cout << "             Response Score" << setw(11) << redResponseScoreTotal / 3 << setw(15) << redResponseScoreTotal_2 / 3 << endl;
+	cout << "             Reaction Time" << setw(14) << redReactTimeTotal / 3 << setw(15) << redReactTimeTotal_2 / 3 << endl;
+	cout << "  Blue Team: Reaction Score" << setw(11) << blueReactionScoreTotal / 3 << setw(15) << blueReactionScoreTotal_2 / 3 << endl;
+	cout << "             Response Score" << setw(11) << blueResponseScoreTotal / 3 << setw(15) << blueResponseScoreTotal_2 / 3 << endl;
+	cout << "             Reaction Time" << setw(14) << blueReactTimeTotal / 3 << setw(15) << blueReactTimeTotal_2 / 3 << endl;
+	cout << "Yellow Team: Reaction Score" << setw(11) << yellowReactionScoreTotal / 3 << setw(15) << yellowReactionScoreTotal_2 / 3 << endl;
+	cout << "             Response Score" << setw(11) << yellowResponseScoreTotal / 3 << setw(15) << yellowResponseScoreTotal_2 / 3 << endl;
+	cout << "             Reaction Time" << setw(14) << yellowReactTimeTotal / 3 << setw(15) << yellowReactTimeTotal_2 / 3 << endl;
+	cout << endl;
+
+
+	//////////////////////////    -END- Objective six outputting results by team -END-    ///////////////////////////////////////////
+
+
+
+	//////////////////////////   -START-  Individual Performance Summery   -START-     ///////////////////////////////////////////
+	string officerName;
+	string userScenarioRequest;
+	cout << "Please enter in the Officers Name." << endl;
+	cout << endl;
+	cin >> officerName;
+	int z = 0;
+	int lcv = 1;
+	int lcv2 = 1;
+	int reactionScore;
+	int responseScore;
+	float reactionTime;
+   	
+	do
+	{
+
+		if (officerName == officerNameArray[z]) {
+
+			reactionScore = reactionScoreArray[z];
+			responseScore = responseScoreArray[z];
+			reactionTime = reactTimeArray[z];
+			lcv = 0;
+			officerName = officerNameArray[z];
+		
+		}
+		
+		else if (officerName != officerNameArray[z])
+		{
+			z++;
+			
+		}
+		
+	} while (lcv);
+
+
+	int n = 0;
 	
+	do {
+		
+		if (officerName == officerNameArray_2[n]) {
+	
+			reactionScore += reactionScoreArray_2[n];
+			responseScore += responseScoreArray_2[n];
+			reactionTime += reactTimeArray_2[n];
+			cout << endl;
+			cout << "Officer " + officerName + ": Reaction Score Average: " << reactionScore / 2 << endl;
+			cout << "            " << setw(10) << ": Response Score Average: " << responseScore / 2 << endl;
+			cout << "            " << setw(10) << ": Reaction Time Average: " << reactionTime / 2.00 << endl;
+			cout << endl;
+			lcv2 = 0;
+		}
+	
+		else
+		{
+			n++;
+	
+		}
+	
+	
+	} while (lcv2);
 
 
+	//////////////////////////     -END-     Individual Performance Summery     -END-    ///////////////////////////////////////////
 
 
+	
 
 	system("Pause");
 	return 0;
