@@ -25,20 +25,20 @@ int main() {
 	cout << "(Press 'Y' to add own files. press 'N' to use default files.)" << endl;
 	cin >> userFileChoice;
 
-		if (userFileChoice == 'Y' || userFileChoice == 'y') {
-			cout << "Enter in file name you want to reference for Scenario 1. example = scenario1.txt or database.txt" << endl;
-			cin >> fileName;
-		}
-		else if (userFileChoice == 'N' || userFileChoice == 'n') {
-			fileName = "database.txt";
-		}
-	
+	if (userFileChoice == 'Y' || userFileChoice == 'y') {
+		cout << "Enter in file name you want to reference for Scenario 1. example = scenario1.txt or database.txt" << endl;
+		cin >> fileName;
+	}
+	else if (userFileChoice == 'N' || userFileChoice == 'n') {
+		fileName = "database.txt";
+	}
+
 
 	//cout << "Enter in file name you want to reference for Scenario 1. example = fileName.txt or database.txt" << endl;
-	
+
 	ifstream officerData;
 	officerData.open(string(fileName));
-	
+
 
 	string officerName1, officerName2, officerName3, officerName4, officerName5, officerName6, officerName7, officerName8, officerName9;
 	int reactionScore1, reactionScore2, reactionScore3, reactionScore4, reactionScore5, reactionScore6, reactionScore7, reactionScore8, reactionScore9;
@@ -62,12 +62,12 @@ int main() {
 	officerData >> officerName7 >> reactionScore7 >> responseScore7 >> reactTime7 >> teamColor7;
 	officerData >> officerName8 >> reactionScore8 >> responseScore8 >> reactTime8 >> teamColor8;
 	officerData >> officerName9 >> reactionScore9 >> responseScore9 >> reactTime9 >> teamColor9;
-	
-	string officerNameArray[] = {officerName1, officerName2, officerName3, officerName4, officerName5, officerName6, officerName7, officerName8, officerName9};
+
+	string officerNameArray[] = { officerName1, officerName2, officerName3, officerName4, officerName5, officerName6, officerName7, officerName8, officerName9 };
 	string teamColorArray[] = { teamColor1, teamColor2, teamColor3, teamColor4, teamColor5, teamColor6, teamColor7, teamColor8, teamColor9 };
-	int reactionScoreArray[] = {reactionScore1, reactionScore2, reactionScore3, reactionScore4, reactionScore5, reactionScore6, reactionScore7, reactionScore8, reactionScore9};
+	int reactionScoreArray[] = { reactionScore1, reactionScore2, reactionScore3, reactionScore4, reactionScore5, reactionScore6, reactionScore7, reactionScore8, reactionScore9 };
 	int responseScoreArray[] = { responseScore1, responseScore2, responseScore3, responseScore4, responseScore5, responseScore6, responseScore7, responseScore8, responseScore9 };
-	float reactTimeArray[] = { reactTime1, reactTime2, reactTime3, reactTime4, reactTime5, reactTime6, reactTime7, reactTime8, reactTime9};
+	float reactTimeArray[] = { reactTime1, reactTime2, reactTime3, reactTime4, reactTime5, reactTime6, reactTime7, reactTime8, reactTime9 };
 
 
 
@@ -78,13 +78,13 @@ int main() {
 	cout << "(Press 'Y' to add own files. press 'N' to use default files.)" << endl;
 	cin >> userFileChoice2;
 
-		if (userFileChoice2 == 'Y' || userFileChoice2 == 'y') {
-			cout << "Enter in file name you want to reference for Scenario 2. example = scenario2.txt or database.txt" << endl;
-			cin >> fileName2;
-		}
-		else if (userFileChoice2 == 'N' || userFileChoice2 == 'n') {
-			fileName2 = "database2.txt";
-		}
+	if (userFileChoice2 == 'Y' || userFileChoice2 == 'y') {
+		cout << "Enter in file name you want to reference for Scenario 2. example = scenario2.txt or database.txt" << endl;
+		cin >> fileName2;
+	}
+	else if (userFileChoice2 == 'N' || userFileChoice2 == 'n') {
+		fileName2 = "database2.txt";
+	}
 
 
 	ifstream officerData_2;
@@ -114,7 +114,7 @@ int main() {
 	string officerNameArray_2[] = { officerName1_2, officerName2_2, officerName3_2, officerName4_2, officerName5_2, officerName6_2, officerName7_2, officerName8_2, officerName9_2 };
 	string teamColorArray_2[] = { teamColor1_2, teamColor2_2, teamColor3_2, teamColor4_2, teamColor5_2, teamColor6_2, teamColor7_2, teamColor8_2, teamColor9_2 };
 	int reactionScoreArray_2[] = { reactionScore1_2, reactionScore2_2, reactionScore3_2, reactionScore4_2, reactionScore5_2, reactionScore6_2, reactionScore7_2, reactionScore8_2, reactionScore9_2 };
-	int responseScoreArray_2[] = { responseScore1_2, responseScore2_2, responseScore3_2, responseScore4_2, responseScore5_2, responseScore6_2, responseScore7_2, responseScore8_2, responseScore9_2};
+	int responseScoreArray_2[] = { responseScore1_2, responseScore2_2, responseScore3_2, responseScore4_2, responseScore5_2, responseScore6_2, responseScore7_2, responseScore8_2, responseScore9_2 };
 	float reactTimeArray_2[] = { reactTime1_2, reactTime2_2, reactTime3_2, reactTime4_2, reactTime5_2, reactTime6_2, reactTime7_2, reactTime8_2, reactTime9_2 };
 
 
@@ -124,7 +124,7 @@ int main() {
 
 	//Objective 1:
 	//Read in and unjumble the teams to present the information in their 3 teams.Add up and average the scores for each team for whichever scenario is asked for :
-	
+
 
 	//Objective 2:
 	//Compare the two scenarios and evaluate the individual performance for each officer :
@@ -226,7 +226,7 @@ int main() {
 	//Objective 5:
 	//Output the main results by outputting the winning team in each scenario as well as the most reactive, most responsive, and 
 	//fastest officers.The winning team is simply the response and reaction added together(without time being a factor) for each officer in the team :
-	cout << "Objective 5" << endl; 
+	cout << "Objective 5" << endl;
 
 
 	x = 0;
@@ -275,13 +275,13 @@ int main() {
 		x++;
 	}
 
-	float redTeamAverage = (redReactionScoreTotal / 3) + (redResponseScoreTotal / 3) / 2; 
+	float redTeamAverage = (redReactionScoreTotal / 3) + (redResponseScoreTotal / 3) / 2;
 	float blueTeamAverage = (blueReactionScoreTotal / 3) + (blueResponseScoreTotal / 3) / 2;
 	float yellowTeamAverage = (yellowReactionScoreTotal / 3) + (yellowResponseScoreTotal / 3) / 2;
-	
+
 
 	if (blueTeamAverage > redTeamAverage && blueTeamAverage > yellowTeamAverage)
-	cout << "blue Team     " << blueTeamAverage << endl;
+		cout << "blue Team     " << blueTeamAverage << endl;
 
 	if (redTeamAverage > blueTeamAverage && redTeamAverage > yellowTeamAverage)
 		cout << "Red Team     " << redTeamAverage << endl;
@@ -292,7 +292,7 @@ int main() {
 	if (blueTeamAverage > redTeamAverage && blueTeamAverage < yellowTeamAverage)
 		cout << "Blue Team     " << blueTeamAverage << endl;
 
- 	if (redTeamAverage > blueTeamAverage && redTeamAverage < yellowTeamAverage)
+	if (redTeamAverage > blueTeamAverage && redTeamAverage < yellowTeamAverage)
 		cout << "Red Team     " << redTeamAverage << endl;
 
 	if (yellowTeamAverage > redTeamAverage && yellowTeamAverage < blueTeamAverage)
@@ -309,6 +309,131 @@ int main() {
 
 	cout << "Top 3 Reaction Scores: " << endl;
 
+	double firstReact = reactionScoreArray[0]; 
+
+	double secondReact =reactionScoreArray[1]; 
+
+	double thirdReact; 
+
+	for (int i = 1; i < 5; i++) {
+		if (reactionScoreArray[i] > firstReact) {
+			firstReact = reactionScoreArray[i];
+		}
+	}; 
+	cout << firstReact << endl;
+
+	cout << "Top 3 Response Scores: " << endl;
+
+	double firstResponse = responseScoreArray[0];
+
+	double secondResponse = responseScoreArray[1];
+
+	double thirdResponse;
+
+	for (int i = 1; i < 5; i++) {
+		if (responseScoreArray[i] > firstResponse) {
+			firstResponse = responseScoreArray[i];
+		}
+	};
+	cout << firstResponse << endl;
+
+	cout << "Top 3 React Times: " << endl;
+
+	double firstTime = reactTimeArray[0];
+
+	double secondTime = reactTimeArray[1];
+
+	double thirdTime;
+
+	for (int i = 1; i < 5; i++) {
+		if (reactTimeArray[i] > firstTime) {
+			firstTime = reactTimeArray[i];
+		}
+	};
+	cout << firstTime << endl;
+
+	cout << "Scenerio 2" << "     Average" << endl;
+
+	float redTeamAverage_2 = (redReactionScoreTotal_2 / 3) + (redResponseScoreTotal_2 / 3) / 2;
+	float blueTeamAverage_2 = (blueReactionScoreTotal_2 / 3) + (blueResponseScoreTotal_2 / 3) / 2;
+	float yellowTeamAverage_2 = (yellowReactionScoreTotal_2 / 3) + (yellowResponseScoreTotal_2 / 3) / 2;
+
+
+	if (blueTeamAverage_2 > redTeamAverage_2 && blueTeamAverage_2 > yellowTeamAverage_2)
+		cout << "blue Team     " << blueTeamAverage_2 << endl;
+
+	if (redTeamAverage_2 > blueTeamAverage_2 && redTeamAverage_2 > yellowTeamAverage_2)
+		cout << "Red Team     " << redTeamAverage_2 << endl;
+
+	if (yellowTeamAverage_2 > redTeamAverage_2 && yellowTeamAverage_2 > blueTeamAverage_2)
+		cout << "Yellow Team     " << yellowTeamAverage_2 << endl;
+
+	if (blueTeamAverage_2 > redTeamAverage_2 && blueTeamAverage_2 < yellowTeamAverage_2)
+		cout << "Blue Team     " << blueTeamAverage_2 << endl;
+
+	if (redTeamAverage_2 > blueTeamAverage_2 && redTeamAverage_2 < yellowTeamAverage_2)
+		cout << "Red Team     " << redTeamAverage_2 << endl;
+
+	if (yellowTeamAverage_2 > redTeamAverage_2 && yellowTeamAverage_2 < blueTeamAverage_2)
+		cout << "Yellow Team     " << yellowTeamAverage_2 << endl;
+
+	if (blueTeamAverage_2 < redTeamAverage_2 && blueTeamAverage_2 < yellowTeamAverage_2)
+		cout << "blue Team     " << blueTeamAverage_2 << endl;
+
+	if (redTeamAverage_2 < blueTeamAverage_2 && redTeamAverage_2 < yellowTeamAverage_2)
+		cout << "Red Team     " << redTeamAverage_2 << endl;
+
+	if (yellowTeamAverage_2 < redTeamAverage_2 && yellowTeamAverage_2 < blueTeamAverage_2)
+		cout << "Yellow Team     " << yellowTeamAverage_2 << endl;
+
+	cout << "Top 3 Reaction Scores: " << endl;
+
+	double firstReact_2 = reactionScoreArray_2[0];
+
+	double secondReact_2 = reactionScoreArray_2[1];
+
+	double thirdReact_2;
+
+	for (int i = 1; i < 7; i++) {
+		if (reactionScoreArray_2[i] > firstReact_2) {
+			firstReact_2 = reactionScoreArray_2[i];
+		}
+	};
+	cout << firstReact_2 << endl;
+
+	cout << "Top 3 Response Scores: " << endl;
+
+	double firstResponse_2 = responseScoreArray_2[0];
+
+	double secondResponse_2 = responseScoreArray_2[1];
+
+	double thirdResponse_2;
+
+	for (int i = 1; i < 5; i++) {
+		if (responseScoreArray_2[i] > firstResponse_2) {
+			firstResponse_2 = responseScoreArray_2[i];
+		}
+	};
+	cout << firstResponse_2 << endl;
+
+	cout << "Top 3 React Times: " << endl;
+
+	double firstTime_2 = reactTimeArray_2[0];
+
+	double secondTime_2 = reactTimeArray_2[1];
+
+	double thirdTime_2;
+
+	for (int i = 1; i < 5; i++) {
+		if (reactTimeArray_2[i] > firstTime_2) {
+			firstTime_2 = reactTimeArray_2[i];
+		}
+	};
+	cout << firstTime_2 << endl;
+
+
+
+
 
 
 
@@ -316,7 +441,7 @@ int main() {
 
 	//Bonus Objective 6:
 	//Allow the input files to be specified by the user and changed from within the program.Additionally, adding a menu in the program to specify which output or function they want.
-		
+
 		//set inpt files    //reaction score, response score, reaction time
 		//Output results according to team
 		//Individual Performance Summery
@@ -361,7 +486,7 @@ int main() {
 	int reactionScore;
 	int responseScore;
 	float reactionTime;
-   	
+
 	do
 	{
 
@@ -372,24 +497,24 @@ int main() {
 			reactionTime = reactTimeArray[z];
 			lcv = 0;
 			officerName = officerNameArray[z];
-		
+
 		}
-		
+
 		else if (officerName != officerNameArray[z])
 		{
 			z++;
-			
+
 		}
-		
+
 	} while (lcv);
 
 
 	int n = 0;
-	
+
 	do {
-		
+
 		if (officerName == officerNameArray_2[n]) {
-	
+
 			reactionScore += reactionScoreArray_2[n];
 			responseScore += responseScoreArray_2[n];
 			reactionTime += reactTimeArray_2[n];
@@ -400,21 +525,21 @@ int main() {
 			cout << endl;
 			lcv2 = 0;
 		}
-	
+
 		else
 		{
 			n++;
-	
+
 		}
-	
-	
+
+
 	} while (lcv2);
 
 
 	//////////////////////////     -END-     Individual Performance Summery     -END-    ///////////////////////////////////////////
 
 
-	
+
 
 	system("Pause");
 	return 0;
